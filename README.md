@@ -17,7 +17,7 @@ skip
 1. pnpm install
 2. pnpm build
 3. pnpm dev
-   - localhost:3001, 3000がそれぞれweb, docs　のディレクトリで展開されてます。
+   - localhost:3000, 3001がそれぞれweb, docs　のディレクトリで展開されてます。
    - 成功確認　画面↓
 <img width="1438" alt="スクリーンショット 2024-03-27 13 03 09" src="https://github.com/ryoma1113/catchup-front/assets/114886327/f678c7d8-91d9-4261-886e-c3ed60f7eab0">
 
