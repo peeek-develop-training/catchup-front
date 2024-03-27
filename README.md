@@ -1,6 +1,6 @@
 # clone
-git clone https://github.com/ryoma1113/catchup-front
-cd catchup-front
+1. git clone https://github.com/ryoma1113/catchup-front
+2. cd catchup-front
 
 # install
 #### `turbo --version` OK
