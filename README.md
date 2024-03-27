@@ -1,6 +1,8 @@
 # clone
 1. git clone https://github.com/ryoma1113/catchup-front
 2. cd catchup-front
+3. node --version > v18.18.* (インストールは別途)
+4. pnpm -v > 8.15.* (インストールは別途)
 
 # install
 #### `turbo --version` OK
