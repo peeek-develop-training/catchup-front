@@ -13,6 +13,14 @@ skip
 2. turbo --version
   > turbo@1.13.0
 
+#### install-2
+1. pnpm install
+2. pnpm build
+3. pnpm dev
+   - localhost:3001, 3000がそれぞれweb, docs　のディレクトリで展開されてます。
+   - 成功確認　画面↓
+<img width="1438" alt="スクリーンショット 2024-03-27 13 03 09" src="https://github.com/ryoma1113/catchup-front/assets/114886327/f678c7d8-91d9-4261-886e-c3ed60f7eab0">
+
 # branches
 - `main` 確定物
 - `develop` 機能マージ　開発時動作確認 ベースブランチ PR先
