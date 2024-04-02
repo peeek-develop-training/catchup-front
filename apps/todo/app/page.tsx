@@ -2,10 +2,14 @@
 
 import { FC, useState } from "react";
 import { useForm } from "react-hook-form";
+import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
 
-type Input = {
-  item: string;
-};
+const schema = yup.object().shape({
+  item: yup.string().required("新しいタスクを入力してください"),
+});
+
+type Input = yup.InferType<typeof schema>;
 
 type Todo = {
   id: number | null;
@@ -14,7 +18,14 @@ type Todo = {
 
 const TodoPage: FC = () => {
   const [todoList, setTodoList] = useState<Todo[]>([]);
-  const { register, handleSubmit, reset } = useForm<Input>();
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm<Input>({
+    resolver: yupResolver(schema),
+  });
 
   const onSubmit = handleSubmit((data) => {
     setTodoList(() => [...todoList, { id: todoList.length, item: data.item }]);
@@ -32,9 +43,10 @@ const TodoPage: FC = () => {
         <input
           type="text"
           placeholder="新しいタスクを入力してください"
-          {...register("item", { required: true })}
+          {...register("item")}
         />
         <button type="submit">追加</button>
+        {errors.item && <p>{errors.item.message}</p>}
       </form>
       <ul>
         {todoList.map((todo) => (
