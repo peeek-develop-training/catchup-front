@@ -12,7 +12,7 @@ const schema = yup.object().shape({
 type Input = yup.InferType<typeof schema>;
 
 type Todo = {
-  id: number | null;
+  id: number;
 } & Input;
 
 const TodoPage: FC = () => {
@@ -52,7 +52,7 @@ const TodoPage: FC = () => {
           <li key={todo.id}>
             <p>{todo.item}</p>
             <a>編集</a>
-            <button onClick={() => onDelete(todo.id!)}>完了</button>
+            <button onClick={() => onDelete(todo.id)}>完了</button>
           </li>
         ))}
       </ul>
