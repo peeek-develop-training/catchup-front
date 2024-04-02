@@ -1,7 +1,7 @@
 "use client";
 
 import { FC, useState } from "react";
-import { useForm, SubmitHandler } from "react-hook-form";
+import { useForm } from "react-hook-form";
 
 type Input = {
   item: string;
@@ -16,10 +16,10 @@ const TodoPage: FC = () => {
   const [todoList, setTodoList] = useState<Todo[]>([]);
   const { register, handleSubmit, reset } = useForm<Input>();
 
-  const onSubmit: SubmitHandler<Input> = (data) => {
+  const onSubmit = handleSubmit((data) => {
     setTodoList(() => [...todoList, { id: todoList.length, item: data.item }]);
     reset();
-  };
+  });
 
   const onDelete = (id: number) => {
     setTodoList(todoList.filter((todo) => todo.id !== id));
@@ -28,7 +28,7 @@ const TodoPage: FC = () => {
   return (
     <div>
       <h1>Todo</h1>
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form onSubmit={onSubmit}>
         <input
           type="text"
           placeholder="新しいタスクを入力してください"
