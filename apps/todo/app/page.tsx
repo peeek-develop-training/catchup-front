@@ -31,7 +31,7 @@ const TodoPage: FC = () => {
     reset();
   });
 
-  const onDelete = (id: number) => {
+  const onDelete = (id: Todo["id"]) => {
     setTodoList(todoList.filter((todo) => todo.id !== id));
   };
 
