@@ -13,8 +13,7 @@ type Input = yup.InferType<typeof schema>;
 
 type Todo = {
   id: number | null;
-  item: string;
-};
+} & Input;
 
 const TodoPage: FC = () => {
   const [todoList, setTodoList] = useState<Todo[]>([]);
