@@ -32,7 +32,7 @@ const TodoPage: FC = () => {
   });
 
   const onDelete = (id: Todo["id"]) => {
-    setTodoList(todoList.filter((todo) => todo.id !== id));
+    setTodoList((prev) => prev.filter((todo) => todo.id !== id));
   };
 
   return (
