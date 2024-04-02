@@ -27,7 +27,7 @@ const TodoPage: FC = () => {
   });
 
   const onSubmit = handleSubmit((data) => {
-    setTodoList(() => [...todoList, { id: todoList.length, item: data.item }]);
+    setTodoList((prev) => [...prev, { id: prev.length, item: data.item }]);
     reset();
   });
 
