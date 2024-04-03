@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { FC, useState } from "react";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
@@ -51,7 +52,7 @@ const TodoPage: FC = () => {
         {todoList.map((todo) => (
           <li key={todo.id}>
             <p>{todo.item}</p>
-            <a>編集</a>
+            <Link href={`/${todo.id}`}>詳細</Link>
             <button onClick={() => onDelete(todo.id)}>完了</button>
           </li>
         ))}
