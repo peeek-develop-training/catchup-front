@@ -5,6 +5,7 @@ import { FC, useState } from "react";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { Test } from "@repo/ui";
 
 const schema = yup.object().shape({
   item: yup.string().required("新しいタスクを入力してください"),
