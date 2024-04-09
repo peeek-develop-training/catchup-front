@@ -10,5 +10,5 @@ type Props = {
 export const Test: FC<Props> = (props) => {
   const { text } = props;
 
-  return <div>{text}</div>;
+  return <h1>{text}</h1>;
 };

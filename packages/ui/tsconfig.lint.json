@@ -3,6 +3,12 @@
   "compilerOptions": {
     "outDir": "dist"
   },
-  "include": ["src", "turbo", "index.tsx", "vitest.config.ts"],
+  "include": [
+    "src",
+    "turbo",
+    "index.tsx",
+    "vitest.config.ts",
+    "vitest.setup.ts"
+  ],
   "exclude": ["node_modules", "dist"]
 }
