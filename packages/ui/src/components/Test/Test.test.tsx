@@ -6,10 +6,9 @@ import { expect, test } from "vitest";
 const { Default } = composeStories(Stories);
 
 describe("Test", () => {
-  test("should render", () => {
+  test("render default", () => {
     const { getByRole } = render(<Default />);
     const element = getByRole("heading", { level: 1 });
-    expect(element.textContent).toContain("Hello!!");
-    // expect(element).toHaveTextContent("Hello!!");
+    expect(element).toHaveTextContent("Hello!!");
   });
 });
